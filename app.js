@@ -20,6 +20,17 @@ var commentRoutes       = require("./routes/comments"),
 
 
 mongoose.connect("mongodb://localhost:27017/yelp_camp_v12_Deploy", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+//added this mongoose connect from MongoDB Atlas video from Ian...kept password in the following line. He recommends hiding it in an environment variable with dotenv package later
+mongoose.connect("mongodb+srv://eamonn:pants789@cluster0-tit1i.mongodb.net/test?retryWrites=true&w=majority",{
+    useNewUrlParser: true,
+    useCreateIndex: true
+}).then(()=>{
+    console.log("connected to DB!");
+}).catch(err=>{
+    console.log("error:", err.message);
+});
+
+
 //this is a line we will see all the time
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
