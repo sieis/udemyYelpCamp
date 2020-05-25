@@ -1,7 +1,7 @@
 const express       = require("express"),
       app           = express(),
       bodyParser    = require("body-parser"),
-      port          = 3000,
+      port          = process.env.PORT || 3000,
       expressSanitizer = require("express-sanitizer"),
       mongoose      = require("mongoose"),
       flash         = require("connect-flash"),
