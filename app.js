@@ -19,7 +19,7 @@ var commentRoutes       = require("./routes/comments"),
     indexRoutes         = require("./routes/index")
 
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp_v12_Deploy", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+// mongoose.connect("mongodb://localhost:27017/yelp_camp_v12_Deploy", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
 //added this mongoose connect from MongoDB Atlas video from Ian...kept password in the following line. He recommends hiding it in an environment variable with dotenv package later
 mongoose.connect("mongodb+srv://eamonn:pants789@cluster0-tit1i.mongodb.net/test?retryWrites=true&w=majority",{
     useNewUrlParser: true,
@@ -77,6 +77,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 
 
 
-app.listen(port, ()=> console.log("YelpCamp yelping on port 3000"))
+app.listen(port, ()=> console.log(`YelpCamp yelping on port ${port}`))
 
 
