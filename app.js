@@ -21,9 +21,7 @@ var commentRoutes       = require("./routes/comments"),
 console.log(process.env.DATABASEURL);
 
 
-
-mongoose.connect(process.env.DATABASEURL,{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
-
+mongoose.connect(process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp_v12_Deploy",{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
 
 
 //this is a line we will see all the time
