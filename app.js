@@ -18,19 +18,22 @@ var commentRoutes       = require("./routes/comments"),
     campgroundRoutes    = require("./routes/campgrounds"),
     indexRoutes         = require("./routes/index")
 
+console.log(process.env.DATABASEURL);
+
 
 // mongoose.connect("mongodb://localhost:27017/yelp_camp_v12_Deploy", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+mongoose.connect(process.env.DATABASEURL,{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 //added this mongoose connect from MongoDB Atlas video from Ian...kept password in the following line. He recommends hiding it in an environment variable with dotenv package later
-mongoose.connect("mongodb+srv://eamonn:pants789@cluster0-tit1i.mongodb.net/test?retryWrites=true&w=majority",{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-}).then(()=>{
-    console.log("connected to DB!");
-}).catch(err=>{
-    console.log("error:", err.message);
-});
+// mongoose.connect("mongodb+srv://eamonn:pants789@cluster0-tit1i.mongodb.net/test?retryWrites=true&w=majority",{
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+//     useCreateIndex: true
+// }).then(()=>{
+//     console.log("connected to DB!");
+// }).catch(err=>{
+//     console.log("error:", err.message);
+// });
 
 
 //this is a line we will see all the time
