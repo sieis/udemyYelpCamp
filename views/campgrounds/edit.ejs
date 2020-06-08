@@ -1,9 +1,7 @@
 <%- include("../partials/header") %> 
-<div class="row">
-    <h1 style="text-align: center">Edit <%= campground.name %> </h1>
-    <div style="width: 30%; margin: 30px auto">
-        <!-- this action needs to be the PUT route made possible with the edit?_method=PUT -->
-        <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+<div class="container mt-3 text-center">
+    <h1>Edit <%= campground.name %> </h1>
+        <form class="mx-auto w-75" action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
             <!-- use name attirubte to grab the data from the request body -->
             <div class="form-group">
                 <input class="form-control" type="text" name="campground[name]" value="<%= campground.name %> ">
@@ -22,6 +20,5 @@
             </div>
         </form>
         <a href="/campgrounds">go back</a>
-    </div>
 </div>
 <%- include("../partials/footer") %> 

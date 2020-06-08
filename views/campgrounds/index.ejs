@@ -12,13 +12,11 @@
 </header>
 
 
-<div class="row text-center" style="display:flex; flex-wrap: wrap;">    
-    <p>
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <div class="row mx-auto">
                 <% campgrounds.forEach(campground => { %>
-                    <div class="card p-0 mb-3 col-md-6 col-lg-4">
-                        <img class="card-img-top" src="<%= campground.image %>">
+                    <div class="card rounded-0 border-light p-0 mb-3 col-md-6 col-lg-4 text-center">
+                        <img class="card-img-top rounded-0" src="<%= campground.image %>">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <%= campground.name %>
@@ -32,7 +30,5 @@
             </div>
         </div>
         
-    </p>
-</div>
 <a href="/">go back</a>
 <%- include("../partials/footer") %> 
