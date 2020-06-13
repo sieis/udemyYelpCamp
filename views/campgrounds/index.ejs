@@ -1,8 +1,11 @@
 <%- include("../partials/header") %> 
-<header class="jumbotron jumbotron-fluid mt-3">
+<header class="jumbotron jumbotron-fluid mt-3 mb-3 p-5">
     <div class="container">
-        <h1 class="display-4">Welcome to YelpCamp!</h1>
-        <p class="lead">View our hand-picked campgrounds from all over the world</p>
+        
+        <div class="display-4">
+            Welcome to YelpCamp!
+        </div>
+        <p class="ml-10 lead">View our hand-picked campgrounds from all over the world</p>
         <p>
             <% if(currentUser){ %> 
             <a class="btn btn-primary btn-large" href="/campgrounds/new">Add a Campground</a>
@@ -10,8 +13,6 @@
         </p>
     </div>
 </header>
-
-
         <div class="container-fluid p-0">
             <div class="row mx-auto">
                 <% campgrounds.forEach(campground => { %>
